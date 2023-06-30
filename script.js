@@ -5,7 +5,7 @@
 let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
 // Prompt the user to input the Spanish ID number and letter
-let DNI = prompt("Introduce the number and letter of your Spanish ID", "45809046f");
+let DNI = prompt("Introduce the number and letter of your Spanish ID", "45809046s");
 
 // Extract the numeric part of the input by removing all non-digit characters
 let numero = DNI.replace(/\D/g, '');
@@ -19,20 +19,15 @@ if (numero > 99999999 || numero < 11111111) {
 // Get the provided letter from the input
 let letraAportada = DNI[8];
 
-// If the letter is not provided, calculate it based on the numeric part
-if (!letraAportada) {
-    const calculoLetra = numero % 23;
-    letraAportada = letras[calculoLetra];
-} else {
-    letraAportada = letraAportada.toUpperCase(); // Convert to uppercase for consistent comparison
-}
-
 // Calculate the correct letter based on the numeric part
 let letraCorrecta = letras[numero % 23];
 
 // Compare the provided letter with the correct letter and display the result
-if (!letraAportada || letraAportada !== letraCorrecta) {
-    document.getElementById('myDiv2').innerHTML = "The letter you've introduced is not correct, the correct letter is: " + letraCorrecta;
+if (letraAportada && letraAportada.toUpperCase() === letraCorrecta) {
+    document.getElementById('myDiv1').innerHTML = "The number and letter of your ID are correct";
+} else if (!letraAportada) {
+    letraAportada = letraCorrecta;
+    document.getElementById('myDiv1').innerHTML = "The number of your ID is correct. The calculated letter is: " + letraCorrecta;
 } else {
-    document.getElementById('myDiv1').innerHTML = "The number and letter of your ID are correct"; 
+    document.getElementById('myDiv2').innerHTML = "The letter you've introduced is not correct, the correct letter is: " + letraCorrecta;
 }
