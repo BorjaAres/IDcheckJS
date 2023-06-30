@@ -18,7 +18,8 @@ The program takes input from the user, which consists of a Spanish ID number and
 
 ## Usage
 
-1. Open the program in a JavaScript-supported environment (such as a web browser console or a Node.js environment).
+
+1. Open the program in a JavaScript-supported environment (such as a web browser console or a Node.js environment) o simply go to this link https://wonderful-eclair-9afd0b.netlify.app/
 
 2. The program will prompt you to input the Spanish ID number and letter. The default input is provided as an example.
 
