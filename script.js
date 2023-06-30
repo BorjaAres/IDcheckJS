@@ -32,9 +32,7 @@ let letraCorrecta = letras[numero % 23];
 
 // Compare the provided letter with the correct letter and display the result
 if (!letraAportada || letraAportada !== letraCorrecta) {
-    document.getElementById('myDiv1').innerHTML = "The number and letter of your ID are correct";
-} else {
     document.getElementById('myDiv2').innerHTML = "The letter you've introduced is not correct, the correct letter is: " + letraCorrecta;
+} else {
+    document.getElementById('myDiv1').innerHTML = "The number and letter of your ID are correct"; 
 }
-
-
